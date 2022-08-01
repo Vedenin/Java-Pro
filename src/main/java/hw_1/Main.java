@@ -9,8 +9,9 @@ public class Main {
 		employeesTable[2] = new Employee("Sidorov Sidor Sidorovich", "Accountant", "sidorov@mail.me", "301231323", 30000, 42);
 		employeesTable[3] = new Employee("Ivanova Ivanka Ivanovna", "Economist", "ivanov@mail.me", "301232313", 35000, 21);
 		employeesTable[4] = new Employee("Petrova Elena Semenovna", "Lawyer", "petrova@mail.me", "301230023", 55000, 46);
-		for (int i = 0; i < employeesTable.length; i++) {
-			if (employeesTable[i].getAge() > 40) employeesTable[i].printInfo();
+		
+		for (Employee employee : employeesTable) {
+			if (employee.getAge() > 40) employee.printInfo();
 		}
 	}
 }

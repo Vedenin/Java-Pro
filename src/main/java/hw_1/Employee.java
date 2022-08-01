@@ -1,3 +1,4 @@
+package hw_1;
 /*
 Создайте класс «Сотрудник» с полями: ФИО, должность, email, телефон, зарплата, возраст.
 Сделайте так, чтобы конструктор класса заполнял эти поля при создании объекта.
@@ -12,9 +13,8 @@ persArray[1] = new Person(...);
 persArray[4] = new Person(...);
 5. Используя цикл, выведите информацию только о сотрудниках старше 40 лет.
  */
-package hw_1;
 
-private class Employee {
+public class Employee {
 	private final String name;
 	private final String position;
 	private final String email;
@@ -22,7 +22,7 @@ private class Employee {
 	private final double salary;
 	private final int age;
 	
-	Employee(String name, String position, String email, String phone, double salary, int age) {
+	Employee (String name, String position, String email, String phone, double salary, int age) {
 		this.name = name;
 		this.position = position;
 		this.email = email;
@@ -31,7 +31,7 @@ private class Employee {
 		this.age = age;
 	}
 	
-	void printInfo() {
+	public void printInfo() {
 		System.out.println("Name: " + name);
 		System.out.println("Position: " + position);
 		System.out.println("Email: " + email);
@@ -41,7 +41,7 @@ private class Employee {
 		System.out.println("----------------------------------\n");
 	}
 	
-	int getAge() {
+	public int getAge() {
 		return age;
 	}
 }
