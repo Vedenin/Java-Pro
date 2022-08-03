@@ -22,7 +22,8 @@ public class Main {
 		employeesTable[4] = new Employee("Petrova Elena Semenovna", "Lawyer", "petrova@mail.com", "55555555555", 5500, 56);
 		
 		for (Employee employee : employeesTable) {
-			if (employee.getAge() > 40) employee.printInfo();
+			if (employee.getAge() > 40) System.out.println(employee);
+			//if (employee.getAge() > 40) employee.printInfo();
 		}
 	}
 }

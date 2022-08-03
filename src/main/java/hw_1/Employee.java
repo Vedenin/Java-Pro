@@ -7,7 +7,7 @@ public class Employee {
 	private final double salary;
 	private final int age;
 	
-	Employee (String name, String position, String email, String phone, double salary, int age) {
+	public Employee(String name, String position, String email, String phone, double salary, int age) {
 		this.name = name;
 		this.position = position;
 		this.email = email;
@@ -24,6 +24,18 @@ public class Employee {
 		System.out.println("Salary: " + salary);
 		System.out.println("Age: " + age);
 		System.out.println("----------------------------------\n");
+	}
+	
+	@Override
+	public String toString() {
+		return "Employee{" +
+				"name='" + name + '\'' +
+				", position='" + position + '\'' +
+				", email='" + email + '\'' +
+				", phone='" + phone + '\'' +
+				", salary=" + salary +
+				", age=" + age +
+				'}';
 	}
 	
 	public int getAge() {
