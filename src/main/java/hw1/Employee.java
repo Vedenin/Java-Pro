@@ -1,4 +1,4 @@
-package hw_1;
+package hw1;
 public class Employee {
 	private final String name;
 	private final String position;
