@@ -25,29 +25,38 @@ public class ColorDot {
 	}
 	
 	public void setRcolor(int rcolor) {
-		if (rcolor >=0 && rcolor <=255) {
-			this.rcolor = rcolor;
+		if (rcolor < 0) {
+			this.rcolor = 0;
+		}
+		else if (rcolor > 255){
+			this.rcolor = 255;
 		}
 		else {
-			System.err.println("ERROR!");
+			this.rcolor = rcolor;
 		}
 	}
 	
 	public void setGcolor(int gcolor) {
-		if (gcolor >=0 && gcolor <=255) {
-			this.gcolor = gcolor;
+		if (gcolor < 0) {
+			this.gcolor = 0;
+		}
+		else if (gcolor > 255){
+			this.gcolor = 255;
 		}
 		else {
-			System.err.println("ERROR!");
+			this.gcolor = gcolor;
 		}
 	}
 	
 	public void setBcolor(int bcolor) {
-		if (bcolor >=0 && bcolor <=255) {
-			this.bcolor = bcolor;
+		if (bcolor < 0) {
+			this.bcolor = 0;
+		}
+		else if (bcolor > 255){
+			this.bcolor = 255;
 		}
 		else {
-			System.err.println("ERROR!");
+			this.bcolor = bcolor;
 		}
 	}
 	
