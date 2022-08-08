@@ -10,12 +10,22 @@ write a calcTotalPrice(): int method that will calculate the total order amount 
 public class Main {
 	public static void main(String[] args) {
 		
-		PizzaOrder pizzaOrder = new PizzaOrder();
-		pizzaOrder.addPizza("s", 2, 2, 2);
-		System.out.println("Order: " + pizzaOrder.getCount() + " pizza(s) cost(s) " + pizzaOrder.calcTotalPrice());
+		PizzaOrder pizzaOrder1 = new PizzaOrder();
+		pizzaOrder1.addPizza("s", 2, 2, 2);
+		System.out.println("Order: " + pizzaOrder1.getCount() + " pizza cost " + pizzaOrder1.calcTotalPrice());
 
-		pizzaOrder.addPizza("l", 0, 4, 1);
-		System.out.println("Order: " + pizzaOrder.getCount() + " pizza(s) cost(s) " + pizzaOrder.calcTotalPrice());
+		pizzaOrder1.addPizza("l", 0, 4, 1);
+		System.out.println("+ Order: " + pizzaOrder1.getCount() + " pizza(s) cost(s) " + pizzaOrder1.calcTotalPrice());
+		
+		PizzaOrder pizzaOrder2 = new PizzaOrder();
+		pizzaOrder2.addPizza("s", 2, 2, 2);
+		System.out.println("Order: " + pizzaOrder2.getCount() + " pizza cost " + pizzaOrder2.calcTotalPrice());
+		
+		pizzaOrder2.addPizza("m", 4, 0, 0);
+		System.out.println("+ Order: " + pizzaOrder2.getCount() + " pizza(s) cost(s) " + pizzaOrder2.calcTotalPrice());
+		
+		pizzaOrder2.addPizza("l", 1, 1, 2);
+		System.out.println("+ Order: " + pizzaOrder2.getCount() + " pizza(s) cost(s) " + pizzaOrder2.calcTotalPrice());
 
 	}
 }

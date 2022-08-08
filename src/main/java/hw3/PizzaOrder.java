@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class PizzaOrder {
 	private int count = 0;
 	ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
-    PizzaOrder () {
+    PizzaOrder() {
 	}
 	
 	public int getCount() {
