@@ -13,36 +13,15 @@ public class ColorDot {
 	public ColorDot(int coordinateX, int coordinateY, int rcolor, int gcolor, int bcolor) {
 		this.coordinateX = coordinateX;
 		this.coordinateY = coordinateY;
-		this.rcolor = rcolor;
-		this.gcolor = gcolor;
-		this.bcolor = bcolor;
+		setRcolor(rcolor);
+		setGcolor(gcolor);
+		setBcolor(bcolor);
 	}
 	
 	public ColorDot(int rcolor, int gcolor, int bcolor) {
 		setRcolor(rcolor);
 		setGcolor(gcolor);
 		setBcolor(bcolor);
-	}
-	
-	public ColorDot(int coordinateX, int coordinateY) {
-		setCoordinateX(coordinateX);
-		setCoordinateY(coordinateY);
-	}
-	
-	public void setCoordinateX(int coordinateX) {
-		if (coordinateX >= 0) {
-			this.coordinateX = coordinateX;
-		} else {
-			System.err.println("ERROR!");
-		}
-	}
-	
-	public void setCoordinateY(int coordinateY) {
-		if (coordinateY >= 0) {
-			this.coordinateY = coordinateY;
-		} else {
-			System.err.println("ERROR!");
-		}
 	}
 	
 	public void setRcolor(int rcolor) {
@@ -72,6 +51,14 @@ public class ColorDot {
 		}
 	}
 	
+	public void setCoordinateX(int coordinateX) {
+		this.coordinateX = coordinateX;
+	}
+	
+	public void setCoordinateY(int coordinateY) {
+		this.coordinateY = coordinateY;
+	}
+	
 	public int getCoordinateX() {
 		return coordinateX;
 	}
@@ -92,14 +79,21 @@ public class ColorDot {
 		return bcolor;
 	}
 	
-	public void changeCoordinate (int x, int y) {
-		setCoordinateX(x);
-		setCoordinateY(y);
-	}
 	public void changeColor (int red, int green, int blue) {
 		setRcolor(red);
 		setGcolor(green);
 		setBcolor(blue);
+	}
+	
+	@Override
+	public String toString() {
+		return "ColorDot{" +
+				"coordinateX=" + coordinateX +
+				", coordinateY=" + coordinateY +
+				", rcolor=" + rcolor +
+				", gcolor=" + gcolor +
+				", bcolor=" + bcolor +
+				'}';
 	}
 	
 	public void getProperties () {

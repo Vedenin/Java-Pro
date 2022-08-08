@@ -17,32 +17,23 @@ public class Main {
 		ColorDot colorDot0 = new ColorDot();
 		ColorDot colorDot1 = new ColorDot(10, 15, -1000, 25, 225);
 		ColorDot colorDot2 = new ColorDot(50, 100, -200);
-		ColorDot colorDot3 = new ColorDot(300, -600);
 		
 		System.out.println("colorDot 0");
-		colorDot0.getProperties();
-		colorDot0.changeCoordinate(50, 100);
+		System.out.println(colorDot0);
 		colorDot0.changeColor(100, 100, 100);
 		colorDot0.getProperties();
 		
 		System.out.println("colorDot 1");
-		colorDot1.getProperties();
-		colorDot1.changeCoordinate(50, 150);
+		System.out.println(colorDot1);
 		colorDot1.changeColor(100, 25, -5);
 		colorDot1.getProperties();
 		
 		System.out.println("colorDot 2");
-		colorDot2.getProperties();
+		System.out.println(colorDot2);
 		colorDot2.setRcolor(250);
 		colorDot2.setGcolor(0);
-		colorDot2.setCoordinateX(10);
+		colorDot2.setCoordinateX(100);
+		colorDot2.setCoordinateY(800);
 		colorDot2.getProperties();
-		
-		System.out.println("colorDot 3");
-		colorDot3.getProperties();
-		colorDot3.changeCoordinate(100, 50);
-		colorDot3.setBcolor(255);
-		colorDot3.getProperties();
-
 	}
 }
