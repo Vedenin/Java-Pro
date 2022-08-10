@@ -26,7 +26,8 @@ public class Main {
 		ivar.run(100);
 		
 		Cat verona = new Cat("Verona");
-		verona.run(250);
+		verona.run(50);
 		verona.swim(1);
+		verona.run(400);
 	}
 }

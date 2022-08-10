@@ -14,20 +14,19 @@ public class Main {
 		
 		PizzaOrder pizzaOrder1 = new PizzaOrder();
 		pizzaOrder1.addPizza("s", 2, 2, 2);
-		out.printf("Order: %d pizza cost %d%n", pizzaOrder1.getCount(), pizzaOrder1.calcTotalPrice());
+		out.printf("Order: %d pizza cost %d%n%s", pizzaOrder1.getCount(), pizzaOrder1.calcTotalPrice(), pizzaOrder1.showPizzas());
 
 		pizzaOrder1.addPizza("l", 0, 4, 1);
-		out.printf("+ Order: %d pizza(s) cost(s) %d%n", pizzaOrder1.getCount(), pizzaOrder1.calcTotalPrice());
+		out.printf("+ Order: %d pizza(s) cost(s) %d%n%s", pizzaOrder1.getCount(), pizzaOrder1.calcTotalPrice(), pizzaOrder1.showPizzas());
 		
 		PizzaOrder pizzaOrder2 = new PizzaOrder();
 		pizzaOrder2.addPizza("s", 2, 2, 2);
-		out.printf("Order: %d pizza cost %d%n", pizzaOrder2.getCount(), pizzaOrder2.calcTotalPrice());
+		out.printf("Order: %d pizza cost %d%n%s", pizzaOrder2.getCount(), pizzaOrder2.calcTotalPrice(), pizzaOrder2.showPizzas());
 		
 		pizzaOrder2.addPizza("m", 4, 0, 0);
-		out.printf("+ Order: %d pizza(s) cost(s) %d%n", pizzaOrder2.getCount(), pizzaOrder2.calcTotalPrice());
+		out.printf("+ Order: %d pizza(s) cost(s) %d%n%s", pizzaOrder2.getCount(), pizzaOrder2.calcTotalPrice(), pizzaOrder2.showPizzas());
 		
 		pizzaOrder2.addPizza("l", 1, 1, 2);
-		out.printf("+ Order: %d pizza(s) cost(s) %d%n", pizzaOrder2.getCount(), pizzaOrder2.calcTotalPrice());
-
+		out.printf("+ Order: %d pizza(s) cost(s) %d%n%s", pizzaOrder2.getCount(), pizzaOrder2.calcTotalPrice(), pizzaOrder2.showPizzas());
 	}
 }

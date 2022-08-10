@@ -1,9 +1,11 @@
 package hw4;
 
 public class Dog extends Animal {
+	private static final int MAX_RUN_DISTANCE = 500;
+	private static final int MAX_SWIM_DISTANCE = 10;
 	public Dog (String name) {
 		super("Dog "+ name);
-		this.runLimit = 500;
-		this.swimLimit = 10;
+		this.runLimit = MAX_RUN_DISTANCE;
+		this.swimLimit = MAX_SWIM_DISTANCE;
 	}
 }

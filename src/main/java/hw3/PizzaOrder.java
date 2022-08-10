@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PizzaOrder {
 	private int count = 0;
-	ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
+	private ArrayList<Pizza> pizzas = new ArrayList<>();
     PizzaOrder() {
 	}
 	
@@ -16,12 +16,19 @@ public class PizzaOrder {
 		pizzas.add(new Pizza(size, cheese, pepperoni, ham));
 		count++;
 	}
-	
 	public int calcTotalPrice() {
 		int price = 0;
 		for (int i = 0; i < count; i++) {
 			price += pizzas.get(i).calcPrice();
 		}
 		return price;
+	}
+	
+	public String showPizzas() {
+		String s = "";
+		for (int i = 0; i < count; i++) {
+			s += pizzas.get(i).toString() + "\n";
+		}
+		return s;
 	}
 }
