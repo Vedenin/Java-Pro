@@ -1,4 +1,4 @@
-package hw4;
+package hw4_Animal;
 
 public class Cat extends Animal {
 	private static final int MAX_RUN_DISTANCE = 200;

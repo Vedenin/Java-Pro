@@ -1,4 +1,4 @@
-package hw3;
+package hw3_Pizza;
 // Create a Book class with title, author, and price fields. Write a constructor, getters, setters and toString.
 
 public class Book {

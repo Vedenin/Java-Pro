@@ -1,4 +1,4 @@
-package hw3;
+package hw3_Pizza;
 // Create an Author class with firstName and lastName fields, add a constructor, getters, setters, and toString.
 
 public class Author {

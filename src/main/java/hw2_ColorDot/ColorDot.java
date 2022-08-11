@@ -1,4 +1,4 @@
-package hw2;
+package hw2_ColorDot;
 
 public class ColorDot {
 	private int coordinateX;

@@ -1,4 +1,4 @@
-package hw3;
+package hw3_Pizza;
 /*
 Create a class Pizza with the fields: size of type String (with possible values "small", "medium" and "large"),
 cheese:int, pepperoni:int, ham:int=0. Add a Pizza constructor (String size, int cheese, int pepperoni, int ham),

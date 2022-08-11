@@ -1,4 +1,4 @@
-package hw3;
+package hw3_Pizza;
 
 public class Pizza {
 	private static final int PRICE_CHEESE = 2;

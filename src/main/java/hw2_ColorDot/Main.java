@@ -1,4 +1,4 @@
-package hw2;
+package hw2_ColorDot;
 
 /*
 Describe a class "color dot". The coordinates and the color are set for a point.

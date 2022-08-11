@@ -1,4 +1,4 @@
-package hw4;
+package hw4_Animal;
 
 public class Animal {
 	protected String name;

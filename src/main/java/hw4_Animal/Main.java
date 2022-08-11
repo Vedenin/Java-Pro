@@ -1,4 +1,4 @@
-package hw4;
+package hw4_Animal;
 /*
 1. Create classes "Dog" and "Cat" with inheritance from the class "Animal".
 2. All animals can run and swim. The length of the obstacle is passed as a parameter to each method.
@@ -8,8 +8,6 @@ For example dogBobik.run(150); -> 'Bobik ran 150 m'.
 - running: cat - 200 m, dog - 500 m;
 - swimming: the cat cannot swim, the dog - 10 m.
  */
-
-import hw1.Employee;
 
 public class Main {
 	public static void main(String[] args) {
