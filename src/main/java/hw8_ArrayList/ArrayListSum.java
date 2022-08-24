@@ -1,3 +1,5 @@
+package hw8_ArrayList;
+
 import java.util.ArrayList;
 /*
 Даны два ArrayList, представляющих два неотрицательных целых числа. Цифры, составляющие эти числа, хранятся по отдельности в ArrayList. Например,
@@ -9,7 +11,7 @@ a.add(3);
 Написать программу, которая складывает два числа, заданных подобным образом и получает ответ в виде нового ArrayList.
  */
 
-public class hw8_ArrayList {
+public class ArrayListSum {
     public static void main(String[] args) {
         ArrayList<Integer> a = new ArrayList<>();
         a.add(2);
