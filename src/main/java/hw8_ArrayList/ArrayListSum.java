@@ -23,12 +23,12 @@ public class ArrayListSum {
         b.add(6);
         b.add(3);
 
-
-        int number = getNumber(a);
-        System.out.println(number);
-        System.out.println(getArrayList(number));
-        System.out.println(getNumber2(a));
         System.out.println(sum( a, b));
+
+        int number1 = getNumber(a);
+        int number2 = getNumber2(b);
+        int answer = number1 + number2;
+        System.out.println(getArrayList(answer));
 
     }
 
