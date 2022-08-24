@@ -30,6 +30,8 @@ public class ArrayListSum {
         int answer = number1 + number2;
         System.out.println(getArrayList(answer));
 
+        System.out.println(getArrayList2(789));
+
     }
 
     private static ArrayList<Integer> sum(ArrayList<Integer> a, ArrayList<Integer> b) {
@@ -74,6 +76,15 @@ public class ArrayListSum {
         String str = String.valueOf(n);
         for (int i = 0; i < str.length(); i++) {
             answer.add(Integer.parseInt("" + str.charAt(i)));
+        }
+        return answer;
+    }
+
+    private static ArrayList<Integer> getArrayList2(int n) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        while (n > 0) {
+            answer.add(0, n % 10);
+            n = n / 10;
         }
         return answer;
     }
