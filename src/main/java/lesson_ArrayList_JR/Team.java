@@ -18,7 +18,7 @@ public class Team<T extends Racer & Moveable> {
                 " has been added to the team " + name);
     }
 
-    public void run(Team<T> team) {
+    public void run(Team<T> team) { // == (Team<? extends Racer> team)
         String winner;
         Random random = new Random();
         int i = random.nextInt(2);
