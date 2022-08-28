@@ -4,17 +4,17 @@ public class Solution {
     public static void main(String[] args) {
 
         Cat cat1 = new Cat("Mars");
-        Cat cat2 = new Cat("Venera");
-        Cat cat3 = new Cat("Neptun");
+        Cat cat2 = new Cat("Venus");
+        Cat cat3 = new Cat("Neptune");
         Cat cat4 = new Cat("Saturn");
 
-        Dog dog1 = new Dog("Kawtanka");
+        Dog dog1 = new Dog("Kashtanka");
         Dog dog2 = new Dog("Bim");
         Dog dog3 = new Dog("Pluto");
         Dog dog4 = new Dog("Goofy");
 
-        Rabbit rabbit1 = new Rabbit("Banny");
-        Rabbit rabbit2 = new Rabbit("Rojer");
+        Rabbit rabbit1 = new Rabbit("Bunny");
+        Rabbit rabbit2 = new Rabbit("Roger");
 
         Team<Cat> catTeam1 = new Team("Cats1");
         catTeam1.addNewRacer(cat1);

@@ -17,8 +17,6 @@ public abstract class Racer {
 
     @Override
     public String toString() {
-        return "Racer{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 }
