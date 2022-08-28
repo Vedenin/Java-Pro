@@ -6,6 +6,7 @@ public class ArrayIterator<String> implements Iterator {
 
     private int index = 0;
     private String[] var = null;
+    var list = new ArrayList<String>();
 
     public ArrayIterator(String[] array) {
         var = array;
