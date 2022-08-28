@@ -1,4 +1,4 @@
-package lesson_ArrayList_JR;
+package lesson_Generic_JR;
 
 import java.util.ArrayList;
 import java.util.List;

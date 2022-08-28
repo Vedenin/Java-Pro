@@ -1,4 +1,4 @@
-package lesson_ArrayList_JR;
+package lesson_Generic_JR;
 
 public class Solution {
     public static void main(String[] args) {
