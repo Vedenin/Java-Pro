@@ -38,11 +38,13 @@ For example {1,2,3,4} and {5,2,3,0} will return {No,Yes,Yes,No}
 
         ArrayList<Integer> one = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> two = new ArrayList<>(Arrays.asList(5, 2, 3, 0));
+        ArrayList<Integer> three = new ArrayList<>(Arrays.asList(9, 8, 7, 6, 5, 4, 3, 2, 1, 0));
         System.out.println(compareLists(one, two));
 /*
 4. Write a method that joins two lists of integers into one.
 public List<Integer> joined(List<Integer>list1, List<Integer> list2)
  */
+        System.out.println(iteratorOfArrays(one, three));
         System.out.println(joined(one, two));
         System.out.println(merge(one, two));
 
@@ -84,6 +86,15 @@ List<Integer> lessThanN(List<Integer>ints, int n)
             result.add(s);
         }
         return result;
+    }
+
+    public static ArrayList<Integer> iteratorOfArrays(List<Integer> one, List<Integer> two) {
+        ArrayList<Integer> results = new ArrayList<>();
+        ListsIterator listIntegrated = new ListsIterator(one, two);
+        while (listIntegrated.hasNext()) {
+            results.add(listIntegrated.next());
+        }
+        return results;
     }
 
     public static ArrayList<I2> joined(List<Integer> one, List<Integer> two) {
