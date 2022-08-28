@@ -44,9 +44,9 @@ For example {1,2,3,4} and {5,2,3,0} will return {No,Yes,Yes,No}
 4. Write a method that joins two lists of integers into one.
 public List<Integer> joined(List<Integer>list1, List<Integer> list2)
  */
-        System.out.println(iteratorOfArrays(one, three));
-        System.out.println(joined(one, two));
-        System.out.println(merge(one, two));
+        System.out.println(iteratorOfArrays(one, three)); // using an iterator
+        System.out.println(joined(one, two));             // using arrays
+        System.out.println(merge(one, two));              // using merge .add
 
 /*
 5.There is a list with integers. Write a method that returns the list without elements greater than the given one.
