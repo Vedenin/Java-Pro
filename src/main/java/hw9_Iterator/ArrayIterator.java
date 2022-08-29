@@ -2,25 +2,29 @@ package hw9_Iterator;
 
 import java.util.Iterator;
 
-public class ArrayIterator<String> implements Iterator {
+public class ArrayIterator<T> implements Iterator<T> {
 
     private int index = 0;
-    private String[] var = null;
-    var list = new ArrayList<String>();
+    private T[] array = null;
 
-    public ArrayIterator(String[] array) {
-        var = array;
+    public ArrayIterator(T[] array) {
+        this.array = array;
     }
 
     @Override
     public boolean hasNext() {
-        return var.length > index;
+        return array.length > index;
     }
 
     @Override
-    public String next() {
-        return var[index++];
+    public T next() {
+        return array[index++];
     }
 
+    @Override
+    public void remove() {
+        int i = index - 1;
+        array[index] = null;
+    }
 }
 
