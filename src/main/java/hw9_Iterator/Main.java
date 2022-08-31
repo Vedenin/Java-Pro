@@ -4,6 +4,9 @@ Write an iterator over an array.
 There must be a class (let's call it ArrayIterator, for example) that implements the Iterator interface.
 */
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 

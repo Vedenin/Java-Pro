@@ -94,7 +94,7 @@ public class Main {
     }
 
     private static List<Integer> shiftedArray(List<Integer> list, int k) {
-       ArrayList<Integer> result = new ArrayList<>();
+       List<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < list.size(); i++) {
             result.add(0);
