@@ -22,6 +22,7 @@ public class Main {
         int k = 9;
         System.out.println(shiftedArray(three, k));
         System.out.println(rotateList(two, k));
+        System.out.println(rotateList2(one, k));
 
 
     }
@@ -94,7 +95,7 @@ public class Main {
     }
 
     private static List<Integer> shiftedArray(List<Integer> list, int k) {
-       List<Integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < list.size(); i++) {
             result.add(0);
@@ -117,6 +118,21 @@ public class Main {
                 list.set(j, list.get(j - 1));
             }
             list.set(0, temp);
+        }
+        return list;
+    }
+
+    private static List<Integer> rotateList2(List<Integer> list, int k) {
+
+        for (int i = 0; i < k; i++) {
+
+            int temp = list.get(0);
+            int size = list.size() - 1;
+
+            for (int j = 0; j < size; j++) {
+                list.set(j, list.get(j + 1));
+            }
+            list.set(size, temp);
         }
         return list;
     }
