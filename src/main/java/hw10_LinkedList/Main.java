@@ -22,9 +22,9 @@ public class Main {
         List<Integer> list2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
         List<Integer> list3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
         int k = 9;
-        System.out.println(shiftedArray(list1, k));
-        System.out.println(rotateList(list2, k)); // Working For Right Rotation
-        System.out.println(rotateList2(list3, k)); //Working For Left Rotation
+        System.out.println(shiftedArray(list1, k));    // Array's Rotation
+        System.out.println(rotateRightList(list2, k)); // Working For Right Rotation
+        System.out.println(rotateLeftList(list3, k));  // Working For Left Rotation
 
 
     }
@@ -109,7 +109,7 @@ public class Main {
         return result;
     }
 
-    private static List<Integer> rotateList(List<Integer> list, int k) {
+    private static List<Integer> rotateRightList(List<Integer> list, int k) {
 
         for (int i = 0; i < k; i++) {
 
@@ -124,7 +124,7 @@ public class Main {
         return list;
     }
 
-    private static List<Integer> rotateList2(List<Integer> list, int k) {
+    private static List<Integer> rotateLeftList(List<Integer> list, int k) {
 
         for (int i = 0; i < k; i++) {
 
