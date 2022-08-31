@@ -21,7 +21,7 @@ public class Main {
         List<Integer> three = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
         int k = 9;
         System.out.println(shiftedArray(three, k));
-        System.out.println(rotateList(three, k));
+        System.out.println(rotateList(two, k));
 
 
     }
