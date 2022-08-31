@@ -18,11 +18,13 @@ public class Main {
         System.out.println(joinedLists(one, two)); // using an iterator
         System.out.println(mergeLists(one, two)); // using merge .add
 
-        List<Integer> three = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        List<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        List<Integer> list2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        List<Integer> list3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
         int k = 9;
-        System.out.println(shiftedArray(three, k));
-        System.out.println(rotateList(two, k));
-        System.out.println(rotateList2(one, k));
+        System.out.println(shiftedArray(list1, k));
+        System.out.println(rotateList(list2, k)); // Working For Right Rotation
+        System.out.println(rotateList2(list3, k)); //Working For Left Rotation
 
 
     }
