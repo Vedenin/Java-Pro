@@ -72,7 +72,7 @@ public class Main {
         }
     }
 
-    private static List<Integer> mergeLists(LinkedList<Integer> one, LinkedList<Integer> two) {
+    private static List<Integer> mergeLists(List<Integer> one, List<Integer> two) {
         List<Integer> result = new LinkedList<>();
         int i = 0, j = 0;
         while (i < one.size() && j < two.size()) {
