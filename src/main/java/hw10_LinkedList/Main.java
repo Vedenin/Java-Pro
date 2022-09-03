@@ -29,14 +29,14 @@ public class Main {
 
         List<Integer> three = new LinkedList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
         for (int k = -9; k < 11; k++) {
-            System.out.println("k = " + k + " " + shiftedArray(three, k));   // Array's Rotation.
+            System.out.println("k = " + k + " " + shiftedArray(three, k));   // Array Rotation.
         }
 
         List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89, 90, 90));
-        System.out.println(removeRepetitiveElements(list));
+        System.out.println(removeRepetitiveElements(list)); // using arrays
 
         List<Integer> list2 = new ArrayList<>(Arrays.asList(1, 1, 1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89, 90, 90));
-        System.out.println(removeRepetitiveElements2(list2));
+        System.out.println(removeRepetitiveElements2(list2)); // using an iterator
     }
 
     private static List<Integer> joinedLists(List<Integer> one, List<Integer> two) {
@@ -129,7 +129,7 @@ public class Main {
     }
 
     private static List<Integer> removeRepetitiveElements2(List<Integer> list2) {
-        ArrayList<Integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
         Iterator<Integer> iterator = list2.iterator();
 
         Integer old = null;
