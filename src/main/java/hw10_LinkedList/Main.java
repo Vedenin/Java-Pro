@@ -26,20 +26,17 @@ public class Main {
         System.out.println(joinedLists(one, two)); // using an iterator
         System.out.println(mergeLists(one, two));  // using merge with .get(elements of List)
 
-        List<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
-        List<Integer> list2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
-        List<Integer> list3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
-        int k = 9;
-        System.out.println(shiftedArray(list1, k));    // Array's Rotation
-        System.out.println(rotateRightList(list2, k)); // Working For Right Rotation
-        System.out.println(rotateLeftList(list3, k));  // Working For Left Rotation
+        List<Integer> three = new LinkedList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        for (int k = -9; k < 11; k++) {
+            System.out.println("k = " + k + " " + shiftedArray(three, k));   // Array's Rotation.
+        }
 
         List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89));
-        System.out.println(removeRepetElm(list));
+        System.out.println(removeRepetitiveElements(list));
     }
 
     private static List<Integer> joinedLists(List<Integer> one, List<Integer> two) {
-        LinkedList<Integer> results = new LinkedList<>();
+        List<Integer> results = new LinkedList<>();
 
         Iterator<Integer> i1 = one.iterator();
         Iterator<Integer> i2 = two.iterator();
@@ -107,49 +104,23 @@ public class Main {
 
     private static List<Integer> shiftedArray(List<Integer> list, int k) {
         List<Integer> result = new ArrayList<>();
-
+        int j = list.size() - k;
+        while (j < 0) j += list.size();
         for (int i = 0; i < list.size(); i++) {
-            result.add(0);
-        }
-        for (int i = 0; i < list.size(); i++) {
-            result.set((i + k) % list.size(), list.get(i));
-
+            result.add(list.get((i + j) % list.size()));
         }
         return result;
     }
 
-    private static List<Integer> rotateRightList(List<Integer> list, int k) {
-
-        for (int i = 0; i < k; i++) {
-
-            int last = list.size() - 1;
-            int temp = list.get(last);
-
-            for (int j = last; j > 0; j--) {
-                list.set(j, list.get(j - 1));
+    private static List<Integer> removeRepetitiveElements(List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size() - 1; j++) {
+                if (list.get(j).equals(list.get(i))) {
+                    list.remove(j);
+                    j--;
+                }
             }
-            list.set(0, temp);
         }
         return list;
-    }
-
-    private static List<Integer> rotateLeftList(List<Integer> list, int k) {
-
-        for (int i = 0; i < k; i++) {
-
-            int temp = list.get(0);
-            int size = list.size() - 1;
-
-            for (int j = 0; j < size; j++) {
-                list.set(j, list.get(j + 1));
-            }
-            list.set(size, temp);
-        }
-        return list;
-    }
-
-    private static List<Integer> removeRepetElm(List<Integer> list) {
-        List<Integer> result = list.stream().distinct().collect(Collectors.toCollection(ArrayList::new));
-        return result;
     }
 }
