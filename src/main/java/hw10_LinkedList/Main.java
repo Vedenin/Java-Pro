@@ -16,8 +16,9 @@ Input: ArrayList = [12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89]
 Output: [12, 23, 34, 45, 57, 67, 89]
  */
 
+import lesson_ArrayList_0826.ListsIterator;
+
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,8 +32,11 @@ public class Main {
             System.out.println("k = " + k + " " + shiftedArray(three, k));   // Array's Rotation.
         }
 
-        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89));
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89, 90, 90));
         System.out.println(removeRepetitiveElements(list));
+
+        List<Integer> list2 = new ArrayList<>(Arrays.asList(1, 1, 1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89, 90, 90));
+        System.out.println(removeRepetitiveElements2(list2));
     }
 
     private static List<Integer> joinedLists(List<Integer> one, List<Integer> two) {
@@ -114,7 +118,7 @@ public class Main {
 
     private static List<Integer> removeRepetitiveElements(List<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size() - 1; j++) {
+            for (int j = i + 1; j < list.size(); j++) {
                 if (list.get(j).equals(list.get(i))) {
                     list.remove(j);
                     j--;
@@ -122,5 +126,20 @@ public class Main {
             }
         }
         return list;
+    }
+
+    private static List<Integer> removeRepetitiveElements2(List<Integer> list2) {
+        ArrayList<Integer> result = new ArrayList<>();
+        Iterator<Integer> iterator = list2.iterator();
+
+        Integer old = null;
+        while (iterator.hasNext()) {
+            Integer i = iterator.next();
+            if (i != old) {
+                result.add(i);
+                old = i;
+            }
+        }
+        return result;
     }
 }
