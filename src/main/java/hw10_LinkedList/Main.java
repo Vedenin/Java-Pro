@@ -7,16 +7,24 @@ in ascending order. For example, from the lists 1 - 2 - 4 and 1 - 3 - 4 you shou
 2. There is an ArrayList containing integers and number k. The numbers in ArrayList must be cyclically shifted
 to the right by k positions. For example, 1 - 2 - 3 - 4 - 5 - 6 at k = 1 is converted to 6 - 1 - 2 - 3 - 4 - 5,
 and at k = 3 to 4 - 5 - 6 - 1 - 2 - 3.
+
+3. Remove repetitive elements in ArrayList.
+Examples:
+Input: ArrayList = [1, 2, 2, 2, 3, 4, 4, 4]
+Output: [1, 2, 3, 4]
+Input: ArrayList = [12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89]
+Output: [12, 23, 34, 45, 57, 67, 89]
  */
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList<Integer> one = new LinkedList<>(Arrays.asList(1, 4, 5, 10));
-        LinkedList<Integer> two = new LinkedList<>(Arrays.asList(1, 2, 3, 8, 11, 21));
+        List<Integer> one = new LinkedList<>(Arrays.asList(1, 4, 5, 10));
+        List<Integer> two = new LinkedList<>(Arrays.asList(1, 2, 3, 8, 11, 21));
         System.out.println(joinedLists(one, two)); // using an iterator
-        System.out.println(mergeLists(one, two)); // using merge .add
+        System.out.println(mergeLists(one, two));  // using merge with .get(elements of List)
 
         List<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
         List<Integer> list2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
@@ -26,10 +34,11 @@ public class Main {
         System.out.println(rotateRightList(list2, k)); // Working For Right Rotation
         System.out.println(rotateLeftList(list3, k));  // Working For Left Rotation
 
-
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89));
+        System.out.println(removeRepetElm(list));
     }
 
-    private static LinkedList<Integer> joinedLists(LinkedList<Integer> one, LinkedList<Integer> two) {
+    private static List<Integer> joinedLists(List<Integer> one, List<Integer> two) {
         LinkedList<Integer> results = new LinkedList<>();
 
         Iterator<Integer> i1 = one.iterator();
@@ -137,5 +146,10 @@ public class Main {
             list.set(size, temp);
         }
         return list;
+    }
+
+    private static List<Integer> removeRepetElm(List<Integer> list) {
+        List<Integer> result = list.stream().distinct().collect(Collectors.toCollection(ArrayList::new));
+        return result;
     }
 }
