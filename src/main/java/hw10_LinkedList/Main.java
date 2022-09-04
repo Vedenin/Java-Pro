@@ -108,7 +108,7 @@ public class Main {
 
     private static List<Integer> shiftedArray(List<Integer> list, int k) {
         List<Integer> result = new ArrayList<>();
-        int j = list.size() - k;
+        int j = - k;
         while (j < 0) j += list.size();
         for (int i = 0; i < list.size(); i++) {
             result.add(list.get((i + j) % list.size()));
