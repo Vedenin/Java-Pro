@@ -16,8 +16,6 @@ Input: ArrayList = [12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89]
 Output: [12, 23, 34, 45, 57, 67, 89]
  */
 
-import lesson_ArrayList_0826.ListsIterator;
-
 import java.util.*;
 
 public class Main {
@@ -27,16 +25,27 @@ public class Main {
         System.out.println(joinedLists(one, two)); // using an iterator
         System.out.println(mergeLists(one, two));  // using merge with .get(elements of List)
 
-        List<Integer> three = new LinkedList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        List<Integer> three = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
         for (int k = -9; k < 11; k++) {
             System.out.println("k = " + k + " " + shiftedArray(three, k));   // Array Rotation.
         }
+        System.out.println("-".repeat(20));
+
+        List<Integer> four = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        for (int k = -3; k < 21; k++) {
+            System.out.println("k = " + k + " " + shiftedArray2(four, k));   // Array Rotation.
+        }
+        int m = 4;
+        System.out.println(shiftedArray2(four, m));
 
         List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89, 90, 90));
         System.out.println(removeRepetitiveElements(list)); // using arrays
 
         List<Integer> list2 = new ArrayList<>(Arrays.asList(1, 1, 1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89, 90, 90));
         System.out.println(removeRepetitiveElements2(list2)); // using an iterator
+
+        List<Integer> list3 = new ArrayList<>(Arrays.asList(1, 2, 2, 2, 2, 2, 3, 4, 4, 4, 12, 23, 23, 34, 45, 45, 45, 45, 45, 57, 67, 89, 90, 90));
+        System.out.println(removeRepetitiveElements3(list3));
     }
 
     private static List<Integer> joinedLists(List<Integer> one, List<Integer> two) {
@@ -116,6 +125,16 @@ public class Main {
         return result;
     }
 
+    private static List<Integer> shiftedArray2(List<Integer> list, int k) {
+        k %= list.size();
+        for (int i = 0; i < k; i++) {
+            int last = list.get(list.size() - 1);
+            list.add(0, last);
+            list.remove(list.size() - 1);
+        }
+        return list;
+    }
+
     private static List<Integer> removeRepetitiveElements(List<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
             for (int j = i + 1; j < list.size(); j++) {
@@ -141,5 +160,16 @@ public class Main {
             }
         }
         return result;
+    }
+
+    private static List<Integer> removeRepetitiveElements3(List<Integer> list) {
+        int count = 1;
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i) != list.get(i + 1)) {
+                list.set(count, list.get(i + 1));
+                count++;
+            }
+        }
+        return list.subList(0, count);
     }
 }
