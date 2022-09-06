@@ -46,7 +46,7 @@ class Point {
         return Math.sqrt(Math.pow(p.x - x, 2) + Math.pow(p.y - y, 2));
     }
 
-        @Override
+    @Override
     public int hashCode() {
         int result = 1;
         result = (int) (31 * result + x * Math.pow(10, 8));
