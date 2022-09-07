@@ -4,7 +4,7 @@ public class Main {
 
         Point point1 = new Point(1, 1.000001);
         Point point2 = new Point(1, 1.0000);
-        Point point3 = new Point(1, 1.000000000000001);
+        Point point3 = new Point(1, 1.0000000000000001);
         Point point4 = new Point(1, 1);
         Point point5 = new Point(2.1, 3);
 

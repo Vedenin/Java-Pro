@@ -69,7 +69,7 @@ class Point {
         return (this.x == point.x && this.y == point.x);
     }
 
-    //    @Override
+//        @Override
 //    public boolean equals(Object o) {
 //        if (this == o) return true;
 //        if (o == null || getClass() != o.getClass()) return false;
