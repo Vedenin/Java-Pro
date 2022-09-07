@@ -48,10 +48,7 @@ class Point {
 
     @Override
     public int hashCode() {
-        int result = 1;
-        result = (int) (31 * result + x * Math.pow(10, 8));
-        result = (int) (31 * result + y * Math.pow(10, 8));
-        return result;
+        return (int) (31 * x + y * Math.pow(10, 8));
     }
 
     @Override
