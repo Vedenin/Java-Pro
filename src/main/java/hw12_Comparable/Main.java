@@ -1,4 +1,4 @@
-package hw12_Comparator;
+package hw12_Comparable;
 /*
 Soldiers have always been, are and will always be lined up in descending order of height. Sort the soldiers,
 thinking beforehand what is better to use under these conditions - Comparable or Comparator.

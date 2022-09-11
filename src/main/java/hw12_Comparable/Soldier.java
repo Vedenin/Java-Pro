@@ -1,4 +1,4 @@
-package hw12_Comparator;
+package hw12_Comparable;
 
 public class Soldier implements Comparable<Soldier> {
     private String name;
