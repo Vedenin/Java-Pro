@@ -5,7 +5,9 @@ thinking beforehand what is better to use under these conditions - Comparable or
 Implement the Soldier class. You can do it with a single field - height. Create a collection of soldiers and sort it.
 It's up to you whether you use Comparable or Comparator, but you need to explain your choice.
  */
-//Comparable - делает наши объекты «сравнимыми» и создает для них наиболее естественный порядок сортировки.
+
+//Comparable используется для объектов с естественным порядком (class's natural ordering).
+//Comparable обеспечивает единую последовательность сортировки и может сортировать коллелцию на основе одного элемента.
 
 import java.util.*;
 
