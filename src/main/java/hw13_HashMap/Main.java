@@ -33,6 +33,7 @@ public class Main {
         }
         System.out.println("-".repeat(20));
 
+        // sort by values in descending order
         List <Map.Entry<String, Integer>> list = new ArrayList<>(mapLetters.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
             @Override
@@ -41,9 +42,30 @@ public class Main {
             }
         });
 
+        System.out.println("Sort by values in descending order \n");
         Iterator<Map.Entry<String, Integer>> iter = list.iterator();
         while(iter.hasNext()){
             Map.Entry<String, Integer> item = iter.next();
+            System.out.println("The symbol " + item.getKey() + " is found " + item.getValue() + " times.");
+        }
+        System.out.println("-".repeat(20));
+
+        // sort by keys in descending order
+        List <Map.Entry<String, Integer>> list2 = new ArrayList<>(mapLetters.entrySet());
+        Collections.sort(list2, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                if(o1.getKey() == o2.getKey()) {return 0;}
+                if(o1.getKey() == null) {return -1;}
+                if(o2.getKey() == null) return 1;
+                return o2.getKey().compareTo(o1.getKey());
+            }
+        });
+
+        System.out.println("Sort by keys in descending order \n");
+        Iterator<Map.Entry<String, Integer>> iter2 = list2.iterator();
+        while(iter2.hasNext()){
+            Map.Entry<String, Integer> item = iter2.next();
             System.out.println("The symbol " + item.getKey() + " is found " + item.getValue() + " times.");
         }
     }
