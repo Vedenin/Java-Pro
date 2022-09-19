@@ -1,4 +1,4 @@
-package lesson_ArrayList_0826;
+package lesson_ArrayList_Aug26;
 
 import java.util.ArrayList;
 import java.util.Arrays;
