@@ -43,7 +43,7 @@ public class Main {
       //  System.out.println(convertToEUR("AUD", 100, rates));
     }
 
-//    public static double convertToEUR(String currencyCode, double amount, Map rates) {
-//
-//    }
+    public static double convertToEUR(String currencyCode, double amount, Map rates) {
+
+    }
 }

@@ -39,6 +39,7 @@ public class HashSet_HashMap {
         Map<Integer, Integer> numbers = new HashMap<>();
         for (Integer i : nums1) {
             //numbers.put(i, numbers.containsKey(i) ? numbers.get(i) + 1 : 1);
+
             numbers.put(i, numbers.getOrDefault(numbers.get(i), 0) + 1);
         }
 
