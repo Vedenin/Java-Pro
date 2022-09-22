@@ -36,22 +36,27 @@ import java.util.Map;
 
 public class Main {
     public static Map<Currency, Double> rates = new HashMap<>();
+
     public static Currency c1 = Currency.getInstance("USD");
     public static Currency c2 = Currency.getInstance("AUD");
     public static Currency c3 = Currency.getInstance("CAD");
     public static Currency c4 = Currency.getInstance("CNY");
     public static Currency c5 = Currency.getInstance("EUR");
+
     public static BigDecimal convertToEUR(Currency currency, double amount, Map<Currency, Double> rates) {
         return new BigDecimal(amount * rates.get(currency));
     }
+
     public static BigDecimal convertToEUR (String currencyCode, double amount) {
         CurrencyEnum cE = CurrencyEnum.valueOf(currencyCode);
         return new BigDecimal( amount * cE.getRate());
     }
+
     public static BigDecimal convertFromEUR (String currencyCode, double amount) {
         CurrencyEnum cE = CurrencyEnum.valueOf(currencyCode);
         return new BigDecimal( amount / cE.getRate());
     }
+
     public static void addRates() {
         rates.put(c1, 1.013232);
         rates.put(c2, 0.672527);
