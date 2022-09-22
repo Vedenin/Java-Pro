@@ -35,25 +35,38 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-    public static void main(String[] args) {
-        Currency c1 = Currency.getInstance("USD");
-        Currency c2 = Currency.getInstance("AUD");
-        Currency c3 = Currency.getInstance("CAD");
-        Currency c4 = Currency.getInstance("CNY");
-        Currency c5 = Currency.getInstance("EUR");
-
-        Map<Currency, Double> rates = new HashMap<>();
+    public static Map<Currency, Double> rates = new HashMap<>();
+    public static Currency c1 = Currency.getInstance("USD");
+    public static Currency c2 = Currency.getInstance("AUD");
+    public static Currency c3 = Currency.getInstance("CAD");
+    public static Currency c4 = Currency.getInstance("CNY");
+    public static Currency c5 = Currency.getInstance("EUR");
+    public static BigDecimal convertToEUR(Currency currency, double amount, Map<Currency, Double> rates) {
+        return new BigDecimal(amount * rates.get(currency));
+    }
+    public static BigDecimal convertToEUR (String currencyCode, double amount) {
+        CurrencyEnum cE = CurrencyEnum.valueOf(currencyCode);
+        return new BigDecimal( amount * cE.getRate());
+    }
+    public static BigDecimal convertFromEUR (String currencyCode, double amount) {
+        CurrencyEnum cE = CurrencyEnum.valueOf(currencyCode);
+        return new BigDecimal( amount / cE.getRate());
+    }
+    public static void addRates() {
         rates.put(c1, 1.013232);
         rates.put(c2, 0.672527);
         rates.put(c3, 0.752339);
         rates.put(c4, 0.143185);
         rates.put(c5, 1.);
+    }
+
+    public static void main(String[] args) {
+        addRates();
 
         double amount1 = 100.0105;
         double amount2 = 1000;
         double amount3 = 100;
         double amount4 = 101.18;
-
 
         System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount3, c1.getCurrencyCode(), c1.getSymbol(),
                 convertToEUR(c1, amount3, rates), c5.getCurrencyCode(), c5.getSymbol());
@@ -73,17 +86,5 @@ public class Main {
                 convertFromEUR(CurrencyEnum.CNY.getCurrencyCode(), amount3), CurrencyEnum.CNY, CurrencyEnum.CNY.getSymbol());
         System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount4, CurrencyEnum.EUR, CurrencyEnum.EUR.getSymbol(),
                 convertFromEUR(CurrencyEnum.USD.getCurrencyCode(), amount4), CurrencyEnum.USD, CurrencyEnum.USD.getSymbol());
-    }
-
-    public static BigDecimal convertToEUR(Currency currency, double amount, Map<Currency, Double> rates) {
-        return new BigDecimal(amount * rates.get(currency));
-    }
-    public static BigDecimal convertToEUR (String currencyCode, double amount) {
-        CurrencyEnum cE = CurrencyEnum.valueOf(currencyCode);
-        return new BigDecimal( amount * cE.getRate());
-    }
-    public static BigDecimal convertFromEUR (String currencyCode, double amount) {
-        CurrencyEnum cE = CurrencyEnum.valueOf(currencyCode);
-        return new BigDecimal( amount / cE.getRate());
     }
 }
