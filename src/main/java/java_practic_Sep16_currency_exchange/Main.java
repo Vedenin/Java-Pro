@@ -29,21 +29,61 @@ public double convertFromEUR(CurrencyEnum currency, double amount) { // currency
 Вывести пример работы двух функций в System.out.println в main
  */
 
+import java.math.BigDecimal;
+import java.util.Currency;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Map<String, Double> rates = new HashMap<>();
-        rates.put("1 USD", 0.98);
-        rates.put("1 AUD", 0.67);
-        rates.put("1 CAD", 0.75);
-        rates.put("1 CNH", 0.14);
+        Currency c1 = Currency.getInstance("USD");
+        Currency c2 = Currency.getInstance("AUD");
+        Currency c3 = Currency.getInstance("CAD");
+        Currency c4 = Currency.getInstance("CNY");
+        Currency c5 = Currency.getInstance("EUR");
 
-      //  System.out.println(convertToEUR("AUD", 100, rates));
+        Map<Currency, Double> rates = new HashMap<>();
+        rates.put(c1, 1.013232);
+        rates.put(c2, 0.672527);
+        rates.put(c3, 0.752339);
+        rates.put(c4, 0.143185);
+        rates.put(c5, 1.);
+
+        double amount1 = 100.0105;
+        double amount2 = 1000;
+        double amount3 = 100;
+        double amount4 = 101.18;
+
+
+        System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount3, c1.getCurrencyCode(), c1.getSymbol(),
+                convertToEUR(c1, amount3, rates), c5.getCurrencyCode(), c5.getSymbol());
+        System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount1, c2.getCurrencyCode(), c2.getSymbol(),
+                convertToEUR(c2, amount1, rates), c5.getCurrencyCode(), c5.getSymbol());
+        System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount2, c3.getCurrencyCode(), c3.getSymbol(),
+                convertToEUR(c3, amount2, rates), c5.getCurrencyCode(), c5.getSymbol());
+        System.out.println();
+
+        System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount3, CurrencyEnum.AUD, CurrencyEnum.AUD.getSymbol(),
+                convertToEUR(CurrencyEnum.AUD.getCurrencyCode(), amount3), CurrencyEnum.EUR, CurrencyEnum.EUR.getSymbol());
+        System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount3, CurrencyEnum.USD, CurrencyEnum.USD.getSymbol(),
+                convertToEUR(CurrencyEnum.USD.getCurrencyCode(), amount3), CurrencyEnum.EUR, CurrencyEnum.EUR.getSymbol());
+        System.out.println();
+
+        System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount3, CurrencyEnum.EUR, CurrencyEnum.EUR.getSymbol(),
+                convertFromEUR(CurrencyEnum.CNY.getCurrencyCode(), amount3), CurrencyEnum.CNY, CurrencyEnum.CNY.getSymbol());
+        System.out.printf("%.2f %s(%s) = %.2f %s(%s)\n", amount4, CurrencyEnum.EUR, CurrencyEnum.EUR.getSymbol(),
+                convertFromEUR(CurrencyEnum.USD.getCurrencyCode(), amount4), CurrencyEnum.USD, CurrencyEnum.USD.getSymbol());
     }
 
-    public static double convertToEUR(String currencyCode, double amount, Map rates) {
-
+    public static BigDecimal convertToEUR(Currency currency, double amount, Map<Currency, Double> rates) {
+        return new BigDecimal(amount * rates.get(currency));
+    }
+    public static BigDecimal convertToEUR (String currencyCode, double amount) {
+        CurrencyEnum cE = CurrencyEnum.valueOf(currencyCode);
+        return new BigDecimal( amount * cE.getRate());
+    }
+    public static BigDecimal convertFromEUR (String currencyCode, double amount) {
+        CurrencyEnum cE = CurrencyEnum.valueOf(currencyCode);
+        return new BigDecimal( amount / cE.getRate());
     }
 }
