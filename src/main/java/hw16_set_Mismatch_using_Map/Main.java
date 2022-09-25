@@ -36,7 +36,6 @@ public class Main {
             map.put(i, map.getOrDefault(i, 0) + 1);
         }
 
-        int a;
         for (int i = 0; i < array.length; i++) {
             if (map.containsKey(i)) {
                 if (map.get(i) == 2) {
