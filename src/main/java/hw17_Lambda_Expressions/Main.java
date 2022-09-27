@@ -10,11 +10,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Printable<Object> printable = t -> System.out.println(t);
+        Printable<Object> printable = p -> System.out.println(p);
 
-        WithoutRemainder<Boolean, Integer> wr = number -> number % 13 == 0;
+        int k = 13;
+        WithoutRemainder<Boolean, Integer> wr = n -> n % k == 0;
 
         Integer a = 130;
-        printable.print("Number " + a + " is" + (wr.withoutRemainder(a) ? "" : " not") + " divisible by 13 without a remainder.");
+        printable.print("Number " + a + " is" + (wr.withoutRemainder(a) ? "" : " not") + " divisible by " + k + " without a remainder.");
     }
 }
