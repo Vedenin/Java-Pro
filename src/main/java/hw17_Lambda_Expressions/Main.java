@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Printable<Object> printable = p -> System.out.println(p);
+        Printable<String> printable = p -> System.out.println(p);
 
         int k = 13;
         WithoutRemainder<Boolean, Integer> wr = n -> n % k == 0;
