@@ -1,5 +1,5 @@
 package hw17_Lambda_Expressions;
 
-public interface Printable {
-    void print(boolean b);
+public interface Printable<T> {
+    void print(T t);
 }
