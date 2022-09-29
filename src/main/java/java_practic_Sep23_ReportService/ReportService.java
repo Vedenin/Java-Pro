@@ -1,10 +1,11 @@
 package java_practic_Sep23_ReportService;
 
 import java.math.BigDecimal;
+// The simulator of the report service
 
 public class ReportService {
 
-    public static BigDecimal[] salesAndProfit (String country) {
+    public static BigDecimal[] salesAndProfit (String country, String city, String department) {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
