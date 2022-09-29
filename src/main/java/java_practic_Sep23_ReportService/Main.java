@@ -21,62 +21,6 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class Main {
-
-    static class Countries {
-        String country;
-        String department;
-        String city;
-
-        public Countries(String country, String department, String city) {
-            this.country = country;
-            this.department = department;
-            this.city = city;
-        }
-
-        @Override
-        public String toString() {
-            return "Countries{" +
-                    "country='" + country + '\'' +
-                    ", department='" + department + '\'' +
-                    ", city='" + city + '\'' +
-                    '}';
-        }
-    }
-
-    static class Filials {
-
-        String department;
-        String city;
-
-        public Filials(String department, String city) {
-            this.department = department;
-            this.city = city;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Filials filials = (Filials) o;
-            return Objects.equals(department, filials.department) && Objects.equals(city, filials.city);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(department, city);
-        }
-
-        @Override
-        public String toString() {
-            return "Filials{" +
-                    "department='" + department + '\'' +
-                    ", city='" + city + '\'' +
-                    '}';
-        }
-    }
-
-    public static Map<Countries, Filials> data = new HashMap<Countries, Filials>();
-
     public static CacheService cacheService = new CacheService();
     private static void printy(String country, String city, String department) {
         BigDecimal[] a = cacheService.getCache(country, city, department);
