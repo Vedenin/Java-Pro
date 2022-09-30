@@ -18,7 +18,6 @@ Second level: То же самое, что в level 1, но в отчет доб
  */
 
 import java.math.BigDecimal;
-import java.util.*;
 
 public class Main {
     public static CacheService cacheService = new CacheService();
@@ -26,61 +25,30 @@ public class Main {
         BigDecimal[] a = cacheService.getCache(country, city, department);
         System.out.printf("%s %s %s %8.2f %8.2f %n", country, city, department, a[0], a[1]);
     }
-
     public static void main(String[] args) throws InterruptedException {
 
-        printy("United Kingdom", "London","Don");
-        printy("United Kingdom", "Manchester","Chester");
-        printy("United Kingdom", "London","Don");
-        printy("United Kingdom", "Manchester","Chester");
-        printy("Austria", "Wien","Wi");
-        printy("Austria", "Linz","Li");
-        printy("Austria", "Wien","En");
-        printy("Finland", "Helsinki","Chesr");
-        printy("United Kingdom", "Manchester","Chester");
-        printy("Finland", "Helsinki","Char");
-        printy("United Kingdom", "Manchester","Chester");
-        printy("Finland", "Helsinki","Char");
-        printy("United Kingdom", "Manchester","Chester");
-        printy("United Kingdom", "Manchester","Chester");
-        printy("Finland", "Helsinki","Chesr");
-        printy("Italy", "Rom","Rom");
-        printy("Sweden", "Stockholm","Rom");
-        printy("Sweden", "Stockholm","Rom");
-        printy("Finland", "Helsinki","Chesr");
-        printy("Azerbaijan", "Baku","Bak");
-        printy("Azerbaijan", "Babek","Bab");
-        printy("Azerbaijan", "Baku","Bak");
-        printy("Finland", "Helsinki","Chesr");
-        printy("Belgium", "Bruegge","Brue");
-        printy("Belgium", "Bruegge","Brue");
-        printy("Belgium", "Bruessel","Bruess");
-        printy("Belgium", "Bruessel","Bruess");
-        printy("Finland", "Helsinki","Chesr");
-        printy("Finland", "Helsinki","Chesr");
-        printy("France", "Paris","Par");
-        printy("Ireland", "Dublin","Dub");
-        printy("France", "Paris","Par");
-        printy("France", "Lzon","Lzon");
-        printy("France", "Lzon","Lzon");
-        printy("Ireland", "Waterford","water");
-        printy("Italy", "Venedig","Ven");
-        printy("Italy", "Venedig","Ven");
-        printy("Norway", "Bergen","Ber");
-        printy("Norway", "Oslo","Oslo");
-        printy("Belgium", "Bruegge","Brue");
-        printy("United Kingdom", "Manchester","Chester");
-        printy("Finland", "Helsinki","Chesr");
+        printy("United Kingdom", "London", "Don");
+        printy("United Kingdom", "Manchester", "Chester");
+        printy("United Kingdom", "London", "Don");
+        printy("Austria", "Wien", "Wi");
+        printy("Austria", "Linz", "Li");
+        printy("Ireland", "Waterford", "water");
+        printy("Italy", "Venedig", "Ven");
+        printy("Norway", "Oslo", "Oslo");
+        printy("Belgium", "Bruegge", "Brue");
+        printy("United Kingdom", "Manchester", "Chester");
+        printy("Finland", "Helsinki", "Chesr");
 
+        cacheService.getMapCashe("Belgium", "Bruegge","Brue");
         cacheService.getMapCashe("Belgium", "Bruegge","Brue");
         cacheService.getMapCashe("Italy", "Venedig","Ven");
         cacheService.getMapCashe("Norway", "Bergen","Ber");
-        cacheService.getMapCashe("Italy", "Venedig","Ven");
         cacheService.getMapCashe("Belgium", "Bruegge","Brue");
+        cacheService.getMapCashe("Norway", "Bergen","Be");
+        cacheService.getMapCashe("Italy", "Venedig","Ven");
         cacheService.getMapCashe("Norway", "Oslo","Oslo");
         cacheService.getMapCashe("Finland", "Helsinki","Chesr");
-        cacheService.getMapCashe("Belgium", "Bruegge","Brue");
         cacheService.getMapCashe("Italy", "Venedig","Ven");
-        cacheService.getMapCashe("Belgium", "Bruegge","Brue");
+
     }
 }
