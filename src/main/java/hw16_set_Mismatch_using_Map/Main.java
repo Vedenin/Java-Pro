@@ -9,7 +9,6 @@ Find the number that occurs twice and the number that is missing and return them
 Example 1:
 Input: nums = [1,2,2,4]
 Output: [2,3]
-
 Example 2:
 Input: nums = [1,1]
 Output: [1,2]
@@ -36,6 +35,7 @@ public class Main {
             map.put(i, map.getOrDefault(i, 0) + 1);
         }
 
+        int a;
         for (int i = 0; i < array.length; i++) {
             if (map.containsKey(i)) {
                 if (map.get(i) == 2) {

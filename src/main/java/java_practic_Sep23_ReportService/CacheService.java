@@ -32,7 +32,6 @@ public class CacheService {
             Values values = (Values) o;
             return Objects.equals(city, values.city) && Objects.equals(department, values.department);
         }
-
         @Override
         public int hashCode() {
             return Objects.hash(city, department);
@@ -51,7 +50,7 @@ public class CacheService {
     }
 
 
-    //private final Map<Key, Values> cashe = new HashMap<>();
+    private final Map<Key, Values> cashe = new HashMap<>();
     private final Map< String, Map<String, String>>  cache = new HashMap<>();
     private final Map< Map<String, Map<String, String>> , BigDecimal[]> filialsCache = new HashMap<>();
     public final Map<Map<String, Map<String, String>>, BigDecimal[]> getMapCashe(String country, String city, String department) {
