@@ -17,38 +17,28 @@ Second level: То же самое, что в level 1, но в отчет доб
 В случае, проблем с реализацией можно посмотреть то что мы делали на уроке код StreetService (https://github.com/tel-ran-de/tasks31m/blob/main/javapractic23092022/src/main/java/com/github/telran_de/StreetService.java).
  */
 
-import java.math.BigDecimal;
-
 public class Main {
     public static CacheService cacheService = new CacheService();
-    private static void printy(String country, String city, String department) {
-        BigDecimal[] a = cacheService.getCache(country, city, department);
-        System.out.printf("%s %s %s %8.2f %8.2f %n", country, city, department, a[0], a[1]);
-    }
     public static void main(String[] args) throws InterruptedException {
 
-        printy("United Kingdom", "London", "Don");
-        printy("United Kingdom", "Manchester", "Chester");
-        printy("United Kingdom", "London", "Don");
-        printy("Austria", "Wien", "Wi");
-        printy("Austria", "Linz", "Li");
-        printy("Ireland", "Waterford", "water");
-        printy("Italy", "Venedig", "Ven");
-        printy("Norway", "Oslo", "Oslo");
-        printy("Belgium", "Bruegge", "Brue");
-        printy("United Kingdom", "Manchester", "Chester");
-        printy("Finland", "Helsinki", "Chesr");
-
         cacheService.getMapCashe("Belgium", "Bruegge","Brue");
         cacheService.getMapCashe("Belgium", "Bruegge","Brue");
-        cacheService.getMapCashe("Italy", "Venedig","Ven");
-        cacheService.getMapCashe("Norway", "Bergen","Ber");
+        cacheService.getMapCashe("Italy", "Venedig", "Ven");
+        cacheService.getMapCashe("Italy", "Rom", "Rim");
+        cacheService.getMapCashe("Finland", "Helsinki", "Chesr");
+        cacheService.getMapCashe("United Kingdom", "Manchester","Chester");
+        cacheService.getMapCashe("Belgium", "Bruegge", "Brue");
+        cacheService.getMapCashe("Austria", "Linz","Li");
+        cacheService.getMapCashe("United Kingdom", "Manchester","Chester");
+        cacheService.getMapCashe("Italy", "Rom", "Rim");
+        cacheService.getMapCashe("Norway", "Oslo", "Oslo");
+        cacheService.getMapCashe("Azerbaijan", "Baku","Bak");
         cacheService.getMapCashe("Belgium", "Bruegge","Brue");
-        cacheService.getMapCashe("Norway", "Bergen","Be");
-        cacheService.getMapCashe("Italy", "Venedig","Ven");
-        cacheService.getMapCashe("Norway", "Oslo","Oslo");
-        cacheService.getMapCashe("Finland", "Helsinki","Chesr");
-        cacheService.getMapCashe("Italy", "Venedig","Ven");
+        cacheService.getMapCashe("Norway", "Bergen", "Be");
+        cacheService.getMapCashe("Belgium", "Bruegge","Brue");
+        cacheService.getMapCashe("Finland", "Helsinki", "Chesr");
+        cacheService.getMapCashe("United Kingdom", "Manchester","Chester");
+        cacheService.getMapCashe("Italy", "Venedig", "Ven");
 
     }
 }
